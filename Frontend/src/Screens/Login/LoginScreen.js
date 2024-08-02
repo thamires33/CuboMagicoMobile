@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 
 const LoginScreen = () => {
+  const navigation = useNavigation();
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
   return (
     <View style={styles.container}>
       <View style={styles.backgroundShapes}>
@@ -23,16 +27,19 @@ const LoginScreen = () => {
         <TextInput
           placeholder="Password"
           style={styles.input}
-          secureTextEntry
+          secureTextEntry={!passwordVisible}
         />
-        <TouchableOpacity>
-          <FontAwesome name="eye" size={24} color="black" style={styles.eyeIcon} />
+        <TouchableOpacity onPress={() => setPasswordVisible(!passwordVisible)}>
+          <FontAwesome name={passwordVisible ? "eye-slash" : "eye"} size={24} color="black" style={styles.eyeIcon} />
         </TouchableOpacity>
       </View>
       <TouchableOpacity>
         <Text style={styles.forgotPassword}>Esqueceu a senha?</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.loginButton}>
+      <TouchableOpacity 
+        style={styles.loginButton}
+        onPress={() => navigation.navigate('Home')} // Navega para a tela Home
+      >
         <Text style={styles.loginButtonText}>Entrar</Text>
       </TouchableOpacity>
       <Text style={styles.orContinueWith}>Ou continue com:</Text>
