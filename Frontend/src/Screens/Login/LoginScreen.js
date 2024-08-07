@@ -14,7 +14,7 @@ const LoginScreen = () => {
         <View style={styles.shape1} />
         <View style={styles.shape2} />
       </View>
-      <Image source={require('../assets/logo.png')} style={styles.logo} />
+      <Image source={require('../../assets/logo.png')} style={styles.logo} />
       <View style={styles.inputContainer}>
         <FontAwesome name="user" size={24} color="black" style={styles.icon} />
         <TextInput
@@ -38,20 +38,19 @@ const LoginScreen = () => {
       </TouchableOpacity>
       <TouchableOpacity 
         style={styles.loginButton}
-        onPress={() => navigation.navigate('Home')} // Navega para a tela Home
-      >
+        onPress={() => navigation.navigate('Home')}>
         <Text style={styles.loginButtonText}>Entrar</Text>
       </TouchableOpacity>
       <Text style={styles.orContinueWith}>Ou continue com:</Text>
       <View style={styles.socialButtonsContainer}>
         <TouchableOpacity>
-          <Image source={require('../assets/login/logo-google.png')} style={styles.socialIcon} />
+          <Image source={require('../../assets/login/logo-google.png')} style={styles.socialIcon} />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Image source={require('../assets/login/logo-apple.png')} style={styles.socialIcon} />
+          <Image source={require('../../assets/login/logo-apple.png')} style={styles.socialIcon} />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Image source={require('../assets/login/facebook-logo.png')} style={styles.socialIcon} />
+          <Image source={require('../../assets/login/facebook-logo.png')} style={styles.socialIcon} />
         </TouchableOpacity>
       </View>
     </View>

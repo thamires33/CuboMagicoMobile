@@ -27,7 +27,10 @@ const HomeScreen = () => {
         <h1>Oi</h1>
       </div>
       <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
+        document.addEventListener('DOMContentLoaded', function() {
+          const widget = new window.VLibras.Widget('https://vlibras.gov.br/app');
+          widget.init();
+        });
       </script>
     </body>
     </html>
@@ -38,12 +41,16 @@ const HomeScreen = () => {
       <WebView 
         originWhitelist={['*']}
         source={{ html: htmlContent }}
-        style={{ flex: 1 }}
+        style={{ flex: 1}}
       />
       <TouchableOpacity 
         style={styles.logoutButton}
-        onPress={() => navigation.navigate('Login')} // Navega de volta para a tela de login
+        onPress={() => navigation.navigate('Login')}
       >
+        <TouchableOpacity 
+        style={styles.logoutButton}
+        onPress={() => navigation.navigate('Login')}
+      ></TouchableOpacity>
         <Text style={styles.logoutButtonText}>Sair</Text>
       </TouchableOpacity>
     </View>
