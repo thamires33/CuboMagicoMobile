@@ -41,16 +41,12 @@ const HomeScreen = () => {
       <WebView 
         originWhitelist={['*']}
         source={{ html: htmlContent }}
-        style={{ flex: 1}}
+        style={{ flex: 1 }}
       />
       <TouchableOpacity 
         style={styles.logoutButton}
         onPress={() => navigation.navigate('Login')}
       >
-        <TouchableOpacity 
-        style={styles.logoutButton}
-        onPress={() => navigation.navigate('Login')}
-      ></TouchableOpacity>
         <Text style={styles.logoutButtonText}>Sair</Text>
       </TouchableOpacity>
     </View>

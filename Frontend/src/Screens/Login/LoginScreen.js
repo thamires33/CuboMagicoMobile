@@ -38,7 +38,7 @@ const LoginScreen = () => {
       </TouchableOpacity>
       <TouchableOpacity 
         style={styles.loginButton}
-        onPress={() => navigation.navigate('Home')}>
+        onPress={() => navigation.navigate('SplashSaudacao')}>
         <Text style={styles.loginButtonText}>Entrar</Text>
       </TouchableOpacity>
       <Text style={styles.orContinueWith}>Ou continue com:</Text>
