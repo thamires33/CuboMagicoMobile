@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { useNavigation } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome'; // Importando a biblioteca de ícones
 import styles from './styles';
 
 const HomeScreen = () => {
@@ -37,18 +38,49 @@ const HomeScreen = () => {
   `;
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>Online Education</Text>
+      </View>
+
       <WebView 
         originWhitelist={['*']}
         source={{ html: htmlContent }}
-        style={{ flex: 1 }}
+        style={styles.webview}
       />
-      <TouchableOpacity 
-        style={styles.logoutButton}
-        onPress={() => navigation.navigate('Login')}
-      >
-        <Text style={styles.logoutButtonText}>Sair</Text>
-      </TouchableOpacity>
+
+      <View style={styles.taskContainer}>
+        <View style={styles.taskBox}>
+          <Text style={styles.taskText}>A</Text>
+        </View>
+        <View style={styles.taskBox}>
+          <Text style={styles.taskText}>B</Text>
+        </View>
+      </View>
+
+      <View style={styles.resourceContainer}>
+        <View style={styles.resourceBox}>
+          <Text style={styles.resourceText}>Lorem ipsum</Text>
+        </View>
+        <View style={styles.resourceBox}>
+          <Text style={styles.resourceText}>Lorem ipsum</Text>
+        </View>
+      </View>
+
+      <View style={styles.navigationBar}>
+        <TouchableOpacity style={styles.navButton}>
+          <Icon name="home" size={24} color="#333" /> {/* Ícone de Home */}
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navButton}>
+          <Icon name="calendar" size={24} color="#333" /> {/* Ícone de Calendário */}
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navButton}>
+          <Icon name="bell" size={24} color="#333" /> {/* Ícone de Notificações */}
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navButton}>
+          <Icon name="user" size={24} color="#333" /> {/* Ícone de Perfil */}
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
