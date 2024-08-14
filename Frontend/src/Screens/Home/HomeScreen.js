@@ -51,10 +51,10 @@ const HomeScreen = () => {
 
       <View style={styles.taskContainer}>
         <View style={styles.taskBox}>
-          <Text style={styles.taskText}>A</Text>
+          <Text style={styles.taskText}>Cores</Text>
         </View>
         <View style={styles.taskBox}>
-          <Text style={styles.taskText}>B</Text>
+          <Text style={styles.taskText}>Animais</Text>
         </View>
       </View>
 
