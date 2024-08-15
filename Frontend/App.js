@@ -13,9 +13,10 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen}  options={{ headerShown: false }} />
-        <Stack.Screen name="SplashSaudacao" component={SplashSaudacao} />
-        <Stack.Screen name="Cadastro" component={CadastroScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="SplashSaudacao" component={SplashSaudacao} options={{ headerShown: false }}/>
+        <Stack.Screen name="Cadastro" component={CadastroScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="Q1" component={Q1}  />
         </Stack.Navigator>
     </NavigationContainer>
   );
