@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { useNavigation } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/FontAwesome'; // Importando a biblioteca de ícones
+import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
 const HomeScreen = () => {
@@ -43,11 +43,13 @@ const HomeScreen = () => {
         <Text style={styles.headerText}>Online Education</Text>
       </View>
 
-      <WebView 
-        originWhitelist={['*']}
-        source={{ html: htmlContent }}
-        style={styles.webview}
-      />
+      <View style={{ flex: 1 }}>
+        <WebView 
+          originWhitelist={['*']}
+          source={{ html: htmlContent }}
+          style={styles.webview}
+        />
+      </View>
 
       <View style={styles.taskContainer}>
         <View style={styles.taskBox}>
@@ -69,16 +71,16 @@ const HomeScreen = () => {
 
       <View style={styles.navigationBar}>
         <TouchableOpacity style={styles.navButton}>
-          <Icon name="home" size={24} color="#333" /> {/* Ícone de Home */}
+          <Icon name="home" size={24} color="#333" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.navButton}>
-          <Icon name="calendar" size={24} color="#333" /> {/* Ícone de Calendário */}
+          <Icon name="calendar" size={24} color="#333" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.navButton}>
-          <Icon name="bell" size={24} color="#333" /> {/* Ícone de Notificações */}
+          <Icon name="bell" size={24} color="#333" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.navButton}>
-          <Icon name="user" size={24} color="#333" /> {/* Ícone de Perfil */}
+          <Icon name="user" size={24} color="#333" />
         </TouchableOpacity>
       </View>
     </View>
