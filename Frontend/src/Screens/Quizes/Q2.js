@@ -33,6 +33,10 @@ const Q2 = () => {
     navigation.navigate('Q3'); // Navegar para a próxima página
   };
 
+  const handleProfile = () => {
+    navigation.navigate('ProfileScreen'); // Navegar para a próxima página
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.questionText}>Qual é o animal?</Text>
@@ -81,7 +85,7 @@ const Q2 = () => {
           <Icon name="home" size={24} color="#333" />
         </TouchableOpacity>
         
-        <TouchableOpacity style={styles.navButton} onPress={'ProfileScreen'}>
+        <TouchableOpacity style={styles.navButton} onPress={handleProfile}>
           <Icon name="user" size={24} color="#333" />
         </TouchableOpacity>
       </View>

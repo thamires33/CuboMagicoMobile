@@ -32,6 +32,10 @@ const Q6 = () => {
   const handleNextPagePress = () => {
     navigation.navigate('Q7'); // Navegar para a próxima página
   };
+  const handleProfile = () => {
+    navigation.navigate('ProfileScreen'); // Navegar para a próxima página
+  };
+
 
   return (
     <View style={styles.container}>
@@ -80,7 +84,7 @@ const Q6 = () => {
           <Icon name="home" size={24} color="#333" />
         </TouchableOpacity>
         
-        <TouchableOpacity style={styles.navButton} onPress={'ProfileScreen'}>
+        <TouchableOpacity style={styles.navButton} onPress={handleProfile}>
           <Icon name="user" size={24} color="#333" />
         </TouchableOpacity>
       </View>

@@ -1,13 +1,15 @@
 import React, { useRef, useState } from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet, Modal } from 'react-native';
 import { Video } from 'expo-av';
-import Icon from 'react-native-vector-icons/FontAwesome'; // Importar FontAwesome para ícones
+import Icon from 'react-native-vector-icons/FontAwesome'; 
+import { useNavigation } from '@react-navigation/native';// Importar FontAwesome para ícones
 
 const Q5 = () => {
-  const videoRef = useRef(null); // Referência para o vídeo
-  const [modalVisible, setModalVisible] = useState(false); // Estado para controlar a visibilidade do modal
-  const [feedbackMessage, setFeedbackMessage] = useState(''); // Estado para armazenar a mensagem de feedback
-  const [feedbackColor, setFeedbackColor] = useState(''); // Estado para armazenar a cor de fundo do modal
+    const videoRef = useRef(null); // Referência para o vídeo
+    const [modalVisible, setModalVisible] = useState(false); // Estado para controlar a visibilidade do modal
+    const [feedbackMessage, setFeedbackMessage] = useState(''); // Estado para armazenar a mensagem de feedback
+    const [feedbackColor, setFeedbackColor] = useState(''); // Estado para armazenar a cor de fundo do modal
+    const navigation = useNavigation();  // Estado para armazenar a cor de fundo do modal
 
   // Função que lida com a seleção de uma resposta
   const handleAnswer = (answer) => {
@@ -29,6 +31,9 @@ const Q5 = () => {
   // Função para ir para a próxima página
   const handleNextPagePress = () => {
     navigation.navigate('Q1'); 
+  };
+  const handleProfile = () => {
+    navigation.navigate('ProfileScreen'); // Navegar para a próxima página
   };
 
   return (
@@ -56,7 +61,7 @@ const Q5 = () => {
           <Image source={require('../../assets/img/borboleta.png')} style={styles.optionImage} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.option} onPress={() => handleAnswer('C')}>
-          <Image source={require('../../assets/img/borboleta.png')} style={styles.optionImage} />
+          <Image source={require('../../assets/img/gato.png')} style={styles.optionImage} />
         </TouchableOpacity>
       </View>
 
@@ -78,7 +83,7 @@ const Q5 = () => {
           <Icon name="home" size={24} color="#333" />
         </TouchableOpacity>
         
-        <TouchableOpacity style={styles.navButton} onPress={'ProfileScreen'}>
+        <TouchableOpacity style={styles.navButton} onPress={handleProfile}>
           <Icon name="user" size={24} color="#333" />
         </TouchableOpacity>
       </View>

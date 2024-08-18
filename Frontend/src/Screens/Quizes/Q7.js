@@ -33,13 +33,18 @@ const Q7 = () => {
     navigation.navigate('Home'); // Navegar para a próxima página
   };
 
+  const handleProfile = () => {
+    navigation.navigate('ProfileScreen'); // Navegar para a próxima página
+  };
+
+
   return (
     <View style={styles.container}>
       <Text style={styles.questionText}>Qual é a cor?</Text>
 
       <Video
         ref={videoRef}
-        source={require('../../assets/videos/vermelho.mp4')}
+        source={require('../../assets/videos/amarelo.mp4')}
         style={styles.video}
         resizeMode="contain"
         isLooping={true}
@@ -80,7 +85,7 @@ const Q7 = () => {
           <Icon name="home" size={24} color="#333" />
         </TouchableOpacity>
         
-        <TouchableOpacity style={styles.navButton} onPress={'ProfileScreen'}>
+        <TouchableOpacity style={styles.navButton} onPress={handleProfile}>
           <Icon name="user" size={24} color="#333" />
         </TouchableOpacity>
       </View>

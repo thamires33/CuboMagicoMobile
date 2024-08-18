@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, Animated } from 'react-native';
 import { Video } from 'expo-av';
 import { useNavigation } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const SplashScreen = () => {
   const navigation = useNavigation();
@@ -65,10 +66,10 @@ const SplashScreen = () => {
       {isVideoFinished && (
         <Animated.View style={[styles.buttonContainer, { opacity: fadeAnim }]}>
           <TouchableOpacity style={styles.button} onPress={handleHomePress}>
-            <Text style={styles.buttonText}>Home</Text>
+            <Icon name="home" size={24} color="#FFFFFF" />
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={handleRepeatPress}>
-            <Text style={styles.buttonText}>Repetir</Text>
+            <Icon name="repeat" size={24} color="#FFFFFF" />
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={handleQuizPress}>
             <Text style={styles.buttonText}>Quiz</Text>

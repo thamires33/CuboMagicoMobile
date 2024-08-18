@@ -29,8 +29,12 @@ const Q1 = () => {
   };
 
   // Função para ir para a próxima página
-  const handleNextPagePress6 = () => {
+  const handleNextPagePress = () => {
     navigation.navigate('Q6'); // Navegar para a próxima página
+  };
+
+  const handleProfile = () => {
+    navigation.navigate('ProfileScreen'); // Navegar para a próxima página
   };
 
   return (
@@ -46,7 +50,7 @@ const Q1 = () => {
         shouldPlay
       />
 
-      <TouchableOpacity style={styles.nextButton} onPress={handleNextPagePress6}>
+      <TouchableOpacity style={styles.nextButton} onPress={handleNextPagePress}>
         <Icon name="arrow-right" size={30} color="#fff" />
       </TouchableOpacity>
 
@@ -81,7 +85,7 @@ const Q1 = () => {
           <Icon name="home" size={24} color="#333" />
         </TouchableOpacity>
         
-        <TouchableOpacity style={styles.navButton} onPress={'ProfileScreen'}>
+        <TouchableOpacity style={styles.navButton} onPress={handleProfile}>
           <Icon name="user" size={24} color="#333" />
         </TouchableOpacity>
       </View>

@@ -7,21 +7,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#E0F7FA',
   },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 30,
+    color: '#0A66C2',
+    zIndex: 1, // Certifique-se de que o título esteja visível sobre outros elementos
+  },
   backgroundShapes: {
     position: 'absolute',
     width: '100%',
     height: '100%',
-    top: 0,
+    top: -20,
     left: 0,
     zIndex: 0, // Shapes devem estar atrás de todos os outros elementos
   },
   shape1: {
     position: 'absolute',
-    width: 1500,
+    width: 15,
     height: 500,
     backgroundColor: '#AEDFF7',
     borderBottomRightRadius: 750,
-    top: -100, // Ajustado para garantir visibilidade
+    top: 100, // Ajustado para garantir visibilidade
     left: -250,
     opacity: 0.5,
     zIndex: -1, // Garante que o shape1 está atrás dos outros elementos
@@ -55,15 +62,26 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     position: 'absolute',
-    zIndex: 2, // Deve estar acima dos shapes e do logo
+    zIndex: 2, 
   },
   taskContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     width: '100%',
     paddingHorizontal: 20,
+    paddingVertical: 20,
     marginTop: 20,
-    zIndex: 3, // Deve estar acima da WebView
+    zIndex: 3,
+    alignItems: 'center'
+  },
+  taskContainerQ: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    width: '80%',
+    paddingHorizontal: 20,
+    marginTop: 2,
+    zIndex: 3, 
+    alignItems: 'flex-end'
   },
   taskBox: {
     backgroundColor: '#ADD8E6',
@@ -72,14 +90,33 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: 150,
     height: 150,
+    marginBottom: 2,
+    zIndex: 4, // Deve estar acima da WebView e da taskContainer
+  },
+  taskBoxQ: {
+    backgroundColor: '#ADD8E6',
+    padding: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+    width: 200,
+    height: 150,
+    left: -30,
     marginBottom: 250,
     zIndex: 4, // Deve estar acima da WebView e da taskContainer
+  },
+  taskTextQ: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 40,
+    color: '#0A66C2'
   },
   taskText: {
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 40,
+    color: '#0A66C2'
   },
   navigationBar: {
     flexDirection: 'row',
@@ -92,12 +129,12 @@ const styles = StyleSheet.create({
     position: 'absolute', // Fixar na parte inferior
     bottom: 0, // Alinhar na parte inferior
     left: 0,
+    zIndex: 5, // Deve estar acima de todos os outros elementos
   },
   navButton: {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  
 });
 
 export default styles;
