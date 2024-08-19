@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 30,
+    marginBottom: 50,
+    marginTop: -120,
     color: '#0A66C2',
     zIndex: 1, // Certifique-se de que o título esteja visível sobre outros elementos
   },
@@ -47,14 +48,14 @@ const styles = StyleSheet.create({
   logoContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 40,
+    marginBottom: 10,
     zIndex: 1, // Deve estar acima dos shapes
   },
   logo: {
     width: 150,
     height: 150,
-    marginBottom: 40,
-    marginTop: 100,
+    marginBottom: 150,
+    marginTop: -30,
     zIndex: 1, // Deve estar acima dos shapes
   },
   webview: {
@@ -65,14 +66,14 @@ const styles = StyleSheet.create({
     zIndex: 2, 
   },
   taskContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     width: '100%',
     paddingHorizontal: 20,
-    paddingVertical: 20,
+    paddingVertical: -2,
     marginTop: 20,
     zIndex: 3,
-    alignItems: 'center'
+    alignItems: 'center', 
   },
   taskContainerQ: {
     flexDirection: 'column',
@@ -90,8 +91,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: 150,
     height: 150,
-    marginBottom: 2,
-    zIndex: 4, // Deve estar acima da WebView e da taskContainer
+    marginBottom: 50,
+    zIndex: 4, 
+   
   },
   taskBoxQ: {
     backgroundColor: '#ADD8E6',
@@ -116,7 +118,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 40,
-    color: '#0A66C2'
+    color: '#0A66C2',
   },
   navigationBar: {
     flexDirection: 'row',

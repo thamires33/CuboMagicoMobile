@@ -30,7 +30,7 @@ const Q5 = () => {
 
   // Função para ir para a próxima página
   const handleNextPagePress = () => {
-    navigation.navigate('Q1'); 
+    navigation.navigate('Home'); 
   };
   const handleProfile = () => {
     navigation.navigate('ProfileScreen'); // Navegar para a próxima página

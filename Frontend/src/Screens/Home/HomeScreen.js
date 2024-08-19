@@ -37,19 +37,13 @@ const HomeScreen = () => {
   return (
     
     <View style={styles.container}>
-       <Text style={styles.title}>Teste de WebView Dentro de uma View</Text>
-      {/* Background shapes */}
       <View style={styles.backgroundShapes}>
         <View style={styles.shape1} />
         <View style={styles.shape2} />
       </View>
 
       {/* WebView */}
-      <WebView
-        originWhitelist={['*']}
-        source={{ html: htmlContent }}
-        style={styles.webview}
-      />
+      
 
       {/* Content */}
       <Image source={require('../../assets/logo.png')} style={styles.logo} />
@@ -67,14 +61,8 @@ const HomeScreen = () => {
         >
           <Text style={styles.taskText}>ANIMAIS</Text>
         </TouchableOpacity>
-      </View>
-      <View style={styles.taskContainerQ}>
-        <TouchableOpacity
-          style={styles.taskBoxQ}
-          onPress={() => navigation.navigate('Q2')}
-        >
-          <Text style={styles.taskTextQ}>QUIZES</Text>
-        </TouchableOpacity>
+      
+        
       </View>
       <View style={styles.navigationBar}>
         <TouchableOpacity style={styles.navButton}>
